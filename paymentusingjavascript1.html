@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: azure;
+        }
+         .pay {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 5px;
+            text-align: center;
+            max-height: 1000px;
+         }
+
+         .bn {
+            background-color:blue;
+            color: white;
+            width:230px;
+            height: 50px;
+         }
+         #one {
+            size: 30px;
+         }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paymentusingjavascript</title>
+</head>
+<body>
+    <table border="1" align="center" width="1000" height="500" cellpadding="0" cellspacing="0">
+       
+        <td align="center" id="one">
+        <select>
+            <option value="0">Payment Options</option>
+            <option value="1">Quick Pay</option>
+            <option value="2">Credit/Debit</option>
+            <option value="3">Gift Voucher</option>
+            <option value="4">Net Banking</option>
+         </select></td>
+        
+       
+         <td align="center">
+            <h2>Enter your Card Details</h2>
+            <div class="pay">
+                Card Number:
+                <input id="num" type="text" size="30px" placeholder="ENTER YOUR CARD NUMBER"/><br><br>
+                Card Holder:
+                <input type="text"  size="30px" placeholder="ENTER CARD HOLDER NAME"/><br><br>
+                Expiry:
+                <input type="text" size="10px" placeholder="MM/YY" /><br><br>
+                CVV: 
+                <input id="cvv" type="text" size="10px" placeholder="CVV"/>
+
+            </div><br><br>
+            <button class="bn" onclick="validateForm()">MAKE PAYMENT</button>
+         </td>
+     </tr> 
+</table>
+<script>
+        function validateForm(){
+            
+            var num=document.getElementById('num').value;
+            //var expiration=document.getElementById('exp-date').value;
+            var cvv=document.getElementById('cvv').value;
+            //var otp=document.getElementById('otp').value;
+
+
+            //validation
+            if(num.length!==16 || isNaN(num)){
+                alert('Please enter a 16 digit card number.');
+                //return;
+            }
+            if(cvv.length!==3 || isNaN(cvv)){
+                alert('Please enter a valid cvv number.');
+                return;
+            }
+           
+if(num.length==16 && !isNaN(num) && cvv.length===3  && !isNaN(cvv))
+{
+            alert('Payment Successful!!');
+}
+           
+       
+        }
+     </script>
+</body>
+</html>

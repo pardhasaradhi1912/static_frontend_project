@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("https://media.architecturaldigest.com/photos/5f8f0401d30e09d9d0bbff8f/16:9/w_2560%2Cc_limit/1%2520(4).jpg");
+            background-size: cover;
+        }
+        .register{
+            text-align: center;
+            backdrop-filter: blur(3px);
+            /* background-color: white; */
+            width: 37%;
+            align-content: center;
+            margin-top: 10%;
+        
+            
+            
+        }
+        h2{
+            color: blue;
+        }
+        ab{
+            color: blue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registerusingjavascript</title>
+</head>
+<body>
+ <div id="output" color='red'></div>
+ <script>
+            function validateForm() {
+               
+                //var name = document.getElementById('name').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('cpassword').value;
+                var useremail = document.getElementById('email').value;
+                var number = document.getElementById('number').value;
+            
+                var output4 = document.getElementById('output4');   
+                var nameRegex = /^[a-zA-Z]+$/;
+            var isUsernameValid = nameRegex.test(name);
+            
+           
+            if(isUsernameValid){
+                output4.innerHTML="valid name";
+                output4.style.color='green';
+            }
+            else{
+                output4.innerHTML="Invalid name!";
+                output4.style.color='red';
+
+                }
+               
+                var output1 = document.getElementById('output1');     
+         let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+         let result = regex.test(useremail);
+
+         if (result) {
+            
+            output1.innerHTML = "Valid email address!";
+            output1.style.color='green';
+         } else {
+            output1.innerHTML = "Enter valid email address!";
+            output1.style.color='red';
+            
+         }
+         var output2 = document.getElementById('output2');
+         if (password != confirmPassword || !password) {
+                    output2.innerHTML = "Not matched!";
+                    output2.style.color='red';
+                } else {
+                    output2.innerHTML = "Matched!";
+                    output2.style.color='green';
+                }
+                var output3 = document.getElementById('output3');
+            let numberRegex=/^[0-9]{10}$/;
+            let isNumberValid=numberRegex.test(number);
+
+            if(isNumberValid){
+                output3.innerHTML="Valid Contact!";
+                output3.style.color='green';
+
+            }
+            else{
+                output3.innerHTML="Invalid Contact!!";
+                output3.style.color='red';
+
+            }
+           
+        
+        if( result && isUsernameValid && isNumberValid && password)
+        {
+            alert('Registration Successful!')
+        }
+        else{
+            alert('Registration Unsuccessful!')
+        }
+    }
+        
+        </script>
+    <center>
+    <section align="center" class="register">
+        <h2>Registration</h2>
+<p2 style="color: aqua;">
+            Username:
+            <input type="text" placeholder="enter name" id="ab" />
+        <br><br>
+        Email:
+            <input id="email" type="text" placeholder="enter your email.." onkeyup="submitEmail()"/>
+            <div id="output1"></div>
+          
+            <br><br>
+        password:
+            <input id="password" type="text" placeholder="enter password" id="ab"/>
+        <br><br>
+        confirm password:
+            <input id="cpassword" type="text" placeholder="enter password" id="ab"/>
+             <div id="output2"></div>
+        <br><br>
+        
+            DOB:
+            <input type="date" /><br><br>    
+        Mobile Number:
+        <input id="number" type="text" /><br><br>
+        <div id="output3"></div>
+        <button class="btn">Get Otp</button><br><br>
+       
+        Otp:
+        <input type="text"/><br><br>
+        <button class="btn" onclick="validateForm()">Register</button>
+        <button class="btn">cancel</button>
+</p2>
+        
+    </section>
+</center>
+</body>
+</html>

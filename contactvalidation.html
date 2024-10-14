@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Contact Number Validation</title>
+</head>
+
+<body>
+   <h3>Using Regular Expression to Validate Contact Number in JavaScript</h3>
+   <div id="output"></div>
+   <label for="contact">Enter your contact number:</label>
+   <input type="text" id="contact" name="contact">
+   <button onclick="validateContact()">Validate contact number</button>
+
+   <script>
+      var output = document.getElementById('output');
+
+      function validateContact() {
+         var contactInput = document.getElementById('contact');
+         var contactNumber = contactInput.value;
+
+         // Regular expression for a 10-digit phone number
+         var regex = /^\d{10}$/;
+
+         if (regex.test(contactNumber)) {
+            output.innerHTML = "The contact number " + contactNumber + " is valid!";
+         } else {
+            output.innerHTML = "Please enter a valid 10-digit contact number.";
+         }
+      }
+   </script>
+</body>
+
+</html>

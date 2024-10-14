@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="rollNo">Roll No:</label>
+        <input type="text" id="rollNo" name="rollNo">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" placeholder="YYYY-MM-DD">
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value.trim();
+            var rollNo = document.getElementById('rollNo').value.trim();
+            var dob = document.getElementById('dob').value.trim();
+
+            if (!name || isNaN(rollNo) || !rollNo || !dob) {
+                alert("Invalid input. Please make sure all fields are filled correctly.");
+            } else {
+                alert("Registration successful!\nName: " + name + "\nRoll No: " + rollNo + "\nDOB: " + dob);
+            }
+        }
+    </script>
+</body>
+
+</html>
